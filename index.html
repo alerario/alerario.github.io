@@ -1,0 +1,118 @@
+<html>
+<meta charset="utf-8">
+<title>Documentação de processo de Software</title>
+<link href="https://unpkg.com/primevue/resources/themes/nova-light/theme.css " rel="stylesheet">
+<link href="https://unpkg.com/primevue/resources/primevue.min.css " rel="stylesheet">
+<link href="https://unpkg.com/primeicons/primeicons.css " rel="stylesheet">
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/primevue/components/calendar/calendar.umd.min.js"></script>
+<script src="https://unpkg.com/primevue/components/accordion/accordion.umd.min.js"></script>
+<script src="https://unpkg.com/primevue/components/accordiontab/accordiontab.umd.min.js"></script>
+<script src="https://unpkg.com/primevue/components/button/button.umd.min.js"></script>
+
+<link href="https://unpkg.com/tabulator-tables@4.6.2/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.6.2/dist/js/tabulator.min.js"></script>
+
+ <script src="recursos.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+	readTextFileDiv("introducao.txt","intro");
+	readTextFileDiv("grupo.txt","grupo");
+	readTextFileDiv("autores.txt","autores");
+	lerGitHubCommit(0,"ucommit"); //0 atribui toda a chave hash do git
+	lerGitHubTag("utag"); //obtem o ultima tag
+    lerGitHubTagCommit("utagcommit");
+    lerExcell("Atividades", 0);
+</script>
+
+
+
+
+<div id="app">
+
+
+<p-accordion :multiple="true">
+	<p-accordiontab header="Documentação do processo">
+		<div id="intro"></div>
+<br>
+	Criado pelo site: https://alerario.netlify.com/processo/
+	<br>
+
+	Grupo:
+	<span id="grupo"></span>
+
+	<br>
+	Autores:
+	<span id="autores"></span>
+
+	<br> 
+	Último Commit:
+	<span id="ucommit"></span>
+
+	<br> Última tag:
+	<span id="utag"></span>
+  (<span id="utagcommit"> </span>)
+  <span id="gtc">  </span>
+
+
+
+	</p-ccordiontab>
+	<p-accordiontab header="Processo">
+		<input type="range" min="0.1" max="3" value="1" step="0.1" class="slider" id="myRange" onmousemove="zoom('texto','sky', this.value)" > 
+   <span id="texto">   </span>
+   <span> 
+   	<p-button label="Proxima imagem" icon="pi pi-angle-double-right" onclick="nextimage('sky','imgcount')" /> </p-button>  </span>
+   	<span id="imgcount"></span>
+   
+   </br>
+		<img src="data/diagrama.png" id="sky">
+	</p-accordiontab>
+
+	<p-accordiontab header="Atividades">
+			<div id="Atividades"></div>
+	</p-accordiontab>
+	
+
+    <p-accordiontab header="Visão Geral do Processo">
+    	<div id="visaoestatica"></div>
+
+	</p-accordiontab>
+
+	<p-accordiontab header="Artefatos">
+
+          <div id="artefatos"></div>
+
+	</p-accordiontab>
+
+	<p-accordiontab header="Guidances">
+          <div id="guidances"></div>
+	</p-accordiontab>
+</p-accordion>
+
+</div>
+
+<script type="text/javascript">
+	Excell2Table('visaoestatica',0);
+	Excell2Table('artefatos',3);
+	Excell2Table('guidances',4);
+</script>
+
+
+
+
+<script>
+
+new Vue({
+  components: {
+    'p-calendar': calendar,
+    'p-accordion' : accordion,
+    'p-accordiontab' :  accordiontab,
+    'p-button' :  button
+  }
+}).$mount('#app')
+</script>
+</html>
