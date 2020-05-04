@@ -260,3 +260,5 @@ var table = new Tabulator(elementID, {
   columns: campos,
  	});
 }
+
+//Alexandre L'Erario - alerario@utfpr.edu.br
