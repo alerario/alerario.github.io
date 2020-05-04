@@ -1,7 +1,7 @@
 //Alexandre L'Erario - alerario@utfpr.edu.br
 
 //modifique somente estas linhas
-var repositorio_nome="/alerario/proshow/"; //coloque o nome do repositorio
+var repositorio_nome="/alerario/alerario.github.io/"; //coloque o nome do repositorio
 var imagens = ["diagrama.png","d1.png", "d2.png"] //coloque o nome de todas as imagens aqui
 
 //nao modifique o codigo daqui em diante
@@ -12,7 +12,7 @@ var indimage=1;
 //ler um documento txt e colocar em um id (div) no html
 function readTextFileDiv(file,elementID)
 {
-    file = repositorio+file;
+    file = repositorio+"data/"+file;
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", file, true);
     rawFile.onreadystatechange = function ()
@@ -110,7 +110,7 @@ document.head.appendChild(imported);
  function lerExcell(elementID, indice_planilha){
         /* set up XMLHttpRequest */
         //var url = "https://raw.githubusercontent.com/alerario/teste/master/processo/Test.xlsx";
-        var file = repositorio + "Test.xlsx";
+        var file = repositorio + "data/"+"processo.xlsx";
         var rawFile = new XMLHttpRequest();
         rawFile.responseType = "arraybuffer";
         rawFile.open("GET", file, true);
@@ -169,7 +169,7 @@ function createTable_file(vetor,elementID) {
 
 //funcao para criar uma tabela utilizando tabulator (.xlsx)
 function Excell2Table(elementID, indice_planilha){
-        var file = repositorio + "processo.xlsx";
+        var file = repositorio + "data/" + "processo.xlsx";
         var rawFile = new XMLHttpRequest();
         rawFile.responseType = "arraybuffer";
         rawFile.open("GET", file, true);
