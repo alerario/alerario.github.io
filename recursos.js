@@ -1,3 +1,4 @@
+//Alexandre L'Erario - alerario@utfpr.edu.br
 
 //modifique somente estas linhas
 var repositorio_nome="/alerario/proshow/"; //coloque o nome do repositorio
