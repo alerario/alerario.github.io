@@ -201,7 +201,7 @@ function Excell2Table(elementID, indice_planilha){
             //remover campos sem valor
     		for (let i = 0; i < json_result.length; ++i) {
     			var t = json_result[i];
-    			if(t.Nome==""){
+    			if(t.Nome==""||t.Nome==undefined){
     			 delete json_result[i];
     			}
 			};
