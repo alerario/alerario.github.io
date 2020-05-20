@@ -26,7 +26,7 @@
 	lerGitHubCommit(0,"ucommit"); //0 atribui toda a chave hash do git
 	lerGitHubTag("utag"); //obtem o ultima tag
     lerGitHubTagCommit("utagcommit");
-    lerExcell("Atividades", 0);
+   // lerExcell("Atividades", 0);
 </script>
 
 
@@ -39,7 +39,8 @@
 	<p-accordiontab header="Documentação do processo">
 		<div id="intro"></div>
 <br>
-	Criado pelo site: https://alerario.netlify.com/processo/
+	Criado pelo site: https://alerario.netlify.com/processo/ <br>
+	Servidor recomendado: https://aprelium.com/abyssws/download.php
 	<br>
 
 	Grupo:
@@ -72,15 +73,25 @@
 		<img src="data/diagrama.png" id="sky">
 	</p-accordiontab>
 
-	<p-accordiontab header="Atividades">
+	<!--<p-accordiontab header="Atividades">
 			<div id="Atividades"></div>
-	</p-accordiontab>
+	</p-accordiontab> -->
 	
 
     <p-accordiontab header="Visão Geral do Processo">
     	<div id="visaoestatica"></div>
 
 	</p-accordiontab>
+
+    <p-accordiontab header="Atividades">
+			<div id="atividades"></div>
+	</p-accordiontab>
+
+
+<p-accordiontab header="Papeis">
+			<div id="papeis"></div>
+	</p-accordiontab>
+
 
 	<p-accordiontab header="Artefatos">
 
@@ -108,6 +119,8 @@
 
 <script type="text/javascript">
 	Excell2Table('visaoestatica',0);
+	Excell2Table('atividades',1);
+	Excell2Table('papeis',2);
 	Excell2Table('artefatos',3);
 	Excell2Table('guidances',4);
 </script>
